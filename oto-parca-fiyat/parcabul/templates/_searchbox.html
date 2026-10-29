@@ -1,0 +1,4 @@
+<form class="search" action="{{ url_for('search') }}">
+  <input name="kod" value="{{ code or '' }}" placeholder="Parça kodu (OEM / üretici kodu), örn. 8200 768 913" required>
+  <button class="btn">Ara</button>
+</form>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Kayıt ol' if mode == 'kayit' else 'Giriş' }}{% endblock %}
+{% block content %}
+<div class="card" style="max-width:420px">
+  <h1 style="margin-top:0">{{ 'Kayıt ol' if mode == 'kayit' else 'Giriş yap' }}</h1>
+  <form method="post">
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+    <label>E-posta</label><input type="email" name="email" required>
+    <label>Şifre</label><input type="password" name="password" required {% if mode == 'kayit' %}minlength="8"{% endif %}>
+    <p><button class="btn">{{ 'Kayıt ol' if mode == 'kayit' else 'Giriş' }}</button></p>
+  </form>
+  {% if mode == 'kayit' %}<p class="muted">Hesabın var mı? <a href="{{ url_for('login') }}">Giriş yap</a></p>
+  {% else %}<p class="muted">Hesabın yok mu? <a href="{{ url_for('register') }}">Kayıt ol</a></p>{% endif %}
+</div>
+{% endblock %}

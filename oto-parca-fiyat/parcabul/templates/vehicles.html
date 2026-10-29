@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ make }}{% endblock %}
+{% block content %}
+<div class="card">
+  <h1 style="margin-top:0">{{ make }}</h1>
+  <div class="grid">
+  {% for v in vehicles %}
+    <a href="{{ url_for('vehicle_parts', vehicle_id=v.id) }}">{{ v.model }}<br>
+      <span class="muted">{{ v.year_from or '' }}–{{ v.year_to or '' }} {{ v.engine }}</span></a>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

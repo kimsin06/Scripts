@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h1 style="margin-top:0">Parça kodunu yaz, en ucuz satıcıyı bul</h1>
+  <p class="muted">Tüm oto yedek parça satıcılarının fiyatlarını tek yerde karşılaştırıyoruz. Kodu farklı yazılmış ve muadil parçaları da gösteriyoruz.</p>
+  {% set code = '' %}{% include "_searchbox.html" %}
+</div>
+{% if makes %}
+<div class="card">
+  <h2 style="margin-top:0">Aracına göre parça bul</h2>
+  <div class="grid">{% for m in makes %}<a href="{{ url_for('vehicles', make=m) }}">{{ m }}</a>{% endfor %}</div>
+</div>
+{% endif %}
+{% endblock %}

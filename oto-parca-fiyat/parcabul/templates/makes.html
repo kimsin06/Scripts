@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Araçlar{% endblock %}
+{% block content %}
+<div class="card">
+  <h1 style="margin-top:0">Marka seç</h1>
+  {% if makes %}
+  <div class="grid">{% for m in makes %}<a href="{{ url_for('vehicles', make=m) }}">{{ m }}</a>{% endfor %}</div>
+  {% else %}<p class="muted">Henüz araç uyumluluk verisi yüklenmedi.</p>{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "type": "feed",
+      "seller": "Demo Parça A",
+      "website": "https://demo-a.example",
+      "url": "satici_a.xml",
+      "format": "xml",
+      "item_path": "urun",
+      "fields": {"code": "oem_kodu", "name": "baslik", "brand": "marka", "price": "fiyat", "url": "link", "stock": "stok"}
+    },
+    {
+      "type": "feed",
+      "seller": "Demo Parça B",
+      "website": "https://demo-b.example",
+      "url": "satici_b.json",
+      "format": "json",
+      "item_path": "products",
+      "fields": {"code": "part_number", "name": "title", "brand": "brand", "price": "price", "url": "url", "stock": "quantity"}
+    },
+    {
+      "type": "feed",
+      "seller": "Demo Parça C",
+      "website": "https://demo-c.example",
+      "url": "satici_c.csv",
+      "format": "csv",
+      "fields": {"code": "kod", "name": "urun_adi", "brand": "marka", "price": "fiyat", "url": "adres", "stock": "stok"}
+    },
+    {
+      "enabled": false,
+      "type": "html_search",
+      "seller": "Örnek Site (feed'i olmayan satıcı)",
+      "website": "https://www.ornek-parca-sitesi.example",
+      "search_url": "https://www.ornek-parca-sitesi.example/arama?q={code}",
+      "delay": 3,
+      "selectors": {"item": ".product-item", "name": ".product-title", "price": ".product-price", "url": "a@href", "code": ".oem-code", "stock": ".stock-status"}
+    }
+  ]
+}

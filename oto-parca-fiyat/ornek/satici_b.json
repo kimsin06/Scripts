@@ -1,0 +1,6 @@
+{"products": [
+  {"part_number": "demo-yf-100", "title": "Yağ Filtresi Orijinal", "brand": "Demo OEM", "price": 412.5, "url": "https://demo-b.example/p/100", "quantity": 4},
+  {"part_number": "DEMO-HF-200", "title": "Hava Filtresi", "brand": "Demo OEM", "price": "1149.90", "url": "https://demo-b.example/p/200", "quantity": 7},
+  {"part_number": "DEMO-BB-300", "title": "Ön Fren Balata Takımı", "brand": "Demo OEM", "price": "1999,00", "url": "https://demo-b.example/p/300", "quantity": 2},
+  {"part_number": "MUADIL-YF-900", "title": "Yağ Filtresi (muadil)", "brand": "Demo Yan Sanayi", "price": 179.0, "url": "https://demo-b.example/p/900", "quantity": 20}
+]}

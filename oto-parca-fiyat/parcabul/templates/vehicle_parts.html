@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ vehicle.make }} {{ vehicle.model }}{% endblock %}
+{% block content %}
+<div class="card">
+  <h1 style="margin-top:0">{{ vehicle.make }} {{ vehicle.model }}</h1>
+  <p class="muted">{{ vehicle.year_from or '' }}–{{ vehicle.year_to or '' }} {{ vehicle.engine }}</p>
+  <div class="table-scroll"><table>
+    <tr><th>Parça</th><th>Kod</th><th>Satıcı</th><th>En ucuz</th></tr>
+    {% for p in parts %}
+    <tr>
+      <td>{{ p.name or '-' }}{% if p.brand %}<br><span class="muted">{{ p.brand }}</span>{% endif %}</td>
+      <td><a href="{{ url_for('search', kod=p.display_code) }}">{{ p.display_code }}</a></td>
+      <td>{{ p.seller_count }}</td>
+      <td class="price">{% if subscribed %}{{ p.min_price|fiyat }}{% else %}<a href="{{ url_for('search', kod=p.display_code) }}">Gör</a>{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table></div>
+</div>
+{% endblock %}

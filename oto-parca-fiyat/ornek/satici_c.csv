@@ -1,0 +1,4 @@
+kod;urun_adi;marka;fiyat;adres;stok
+DEMO-YF-100;Yağ Filtresi;Demo OEM;365,00;https://demo-c.example/u/yf100;var
+DEMO-HF-200;Hava Filtresi;Demo OEM;1.299,00;https://demo-c.example/u/hf200;yok
+DEMO-BB-300;Fren Balatası Ön;Demo OEM;2.049,90;https://demo-c.example/u/bb300;var

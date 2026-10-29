@@ -1,0 +1,6 @@
+code,make,model,year_from,year_to,engine
+DEMO-YF-100,Renault,Clio,2012,2019,1.5 dCi
+DEMO-HF-200,Renault,Clio,2012,2019,1.5 dCi
+DEMO-BB-300,Renault,Clio,2012,2019,1.5 dCi
+DEMO-YF-100,Dacia,Sandero,2013,2020,1.5 dCi
+DEMO-BB-300,Fiat,Egea,2015,,1.3 Multijet

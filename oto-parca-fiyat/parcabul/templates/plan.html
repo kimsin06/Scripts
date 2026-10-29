@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Abonelik{% endblock %}
+{% block content %}
+<div class="card" style="max-width:560px">
+  <h1 style="margin-top:0">Aylık abonelik</h1>
+  {% if sub_until %}
+    <p><span class="tag ok">Aktif</span> Aboneliğin {{ sub_until.strftime('%d.%m.%Y') }} tarihine kadar geçerli.</p>
+  {% else %}
+    <p>Aboneliğin aktif değil.</p>
+  {% endif %}
+  <p class="price" style="font-size:24px">{{ monthly_fee|fiyat }} / ay</p>
+  <ul>
+    <li>Tüm satıcılarda en ucuz fiyat ve satıcı linki</li>
+    <li>Muadil (yan sanayi) parça karşılaştırması</li>
+    <li>Araca göre uyumlu parça listesi</li>
+  </ul>
+  <p>{{ payment_info }}</p>
+  <p class="muted">Hesap: {{ user.email }}</p>
+</div>
+{% endblock %}

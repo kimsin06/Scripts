@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ code }}{% endblock %}
+{% block content %}
+<div class="card">{% include "_searchbox.html" %}</div>
+<div class="card">
+{% if not offers %}
+  <p>"{{ code }}" için güncel teklif bulunamadı.</p>
+{% else %}
+  {% set main = offers|rejectattr('is_equivalent')|first or offers[0] %}
+  <h2 style="margin-top:0">{{ main.part_name or main.display_code }} <span class="muted">{{ main.display_code }}</span></h2>
+  <p class="muted">{{ sellers }} satıcıda {{ offers|length }} teklif bulundu.</p>
+  {% if subscribed %}
+  <div class="table-scroll"><table>
+    <tr><th>Satıcı</th><th>Ürün</th><th>Kod</th><th>Stok</th><th>Fiyat</th><th></th></tr>
+    {% for o in offers %}
+    <tr class="{{ 'best' if loop.first and o.in_stock }}">
+      <td>{{ o.seller }}{% if loop.first and o.in_stock %}<br><span class="tag ok">En ucuz</span>{% endif %}</td>
+      <td>{{ o.title or '-' }}{% if o.brand %}<br><span class="muted">{{ o.brand }}</span>{% endif %}</td>
+      <td>{{ o.display_code }}{% if o.is_equivalent %}<br><span class="tag">Muadil</span>{% endif %}</td>
+      <td>{% if o.in_stock %}<span class="tag ok">Var</span>{% else %}<span class="tag">Yok</span>{% endif %}</td>
+      <td class="price">{{ o.price_kurus|fiyat }}</td>
+      <td><a class="btn" href="{{ o.url }}" target="_blank" rel="noopener nofollow">Satıcıya git</a></td>
+    </tr>
+    {% endfor %}
+  </table></div>
+  {% else %}
+  <p class="price" style="font-size:24px">En ucuz: {{ offers[0].price_kurus|fiyat }}</p>
+  <p>En ucuz satıcıyı, tüm fiyatları ve satıcı linklerini görmek için aylık abone ol ({{ monthly_fee|fiyat }}/ay).</p>
+  <a class="btn" href="{{ url_for('plan') if user else url_for('register') }}">Abone ol</a>
+  {% endif %}
+{% endif %}
+</div>
+{% endblock %}

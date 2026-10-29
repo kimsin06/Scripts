@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urunler>
+  <urun><oem_kodu>DEMO-YF-100</oem_kodu><baslik>Yağ Filtresi</baslik><marka>Demo OEM</marka><fiyat>389,90 TL</fiyat><link>https://demo-a.example/yag-filtresi-100</link><stok>12</stok></urun>
+  <urun><oem_kodu>DEMO HF 200</oem_kodu><baslik>Hava Filtresi</baslik><marka>Demo OEM</marka><fiyat>1.249,00 TL</fiyat><link>https://demo-a.example/hava-filtresi-200</link><stok>3</stok></urun>
+  <urun><oem_kodu>DEMO.BB.300</oem_kodu><baslik>Ön Fren Balatası</baslik><marka>Demo OEM</marka><fiyat>2.150,00 TL</fiyat><link>https://demo-a.example/balata-300</link><stok>0</stok></urun>
+</urunler>
